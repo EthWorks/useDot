@@ -1,0 +1,25 @@
+{
+  "name": "@useDot/testing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "lint": "eslint 'src/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/*.{ts,tsx}' --fix"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist/src"
+  ],
+  "dependencies": {
+    "@polkadot/api": "6.6.1",
+    "@polkadot/types": "6.6.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2",
+    "eslint": "^7.32.0",
+    "@useDot/eslint-config": "~0.1.0",
+    "@rushstack/eslint-patch": "~1.0.7"
+  }
+}
