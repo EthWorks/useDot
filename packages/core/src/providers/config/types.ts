@@ -1,6 +1,12 @@
 import type { Chains } from '../../consts'
 
-export type ChainInfo = {name: Chains, url?: string}
+import { ApiOptions } from '@polkadot/api/types'
+
+export type ChainInfo = {
+  name: Chains, 
+  url?: string,
+  options?: ApiOptions
+}
 
 export interface Config {
   chains: ChainInfo[],

@@ -1,15 +1,16 @@
 import type { ConnectionState, UseApi } from './types'
 
 import { ApiRx, WsProvider } from '@polkadot/api'
+import { ApiOptions } from '@polkadot/api/types'
 import { useEffect, useMemo, useState } from 'react'
 
-export const useChainApi = (chainUrl: string): UseApi => {
+export const useChainApi = (chainUrl: string, options?: ApiOptions): UseApi => {
   const [connectionState, setConnectionState] = useState<ConnectionState>('connecting')
 
   const api = useMemo(() => {
     const provider = new WsProvider(chainUrl)
 
-    return new ApiRx({ provider })
+    return new ApiRx({ ...options, provider })
   }, [])
 
   useEffect(() => {

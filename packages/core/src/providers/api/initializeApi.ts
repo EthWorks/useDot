@@ -6,7 +6,7 @@ import { useChainApi } from './useChainApi'
 
 export function initializeApi(chainInfos: ChainInfo[]): Partial<Record<Chains, UseApi>> {
   return chainInfos.reduce(
-    (o, { name, url }) => Object.assign(o, { [name]: useChainApi(url ? url : defaultChainUrls[name]) }),
+    (o, { name, url, options }) => Object.assign(o, { [name]: useChainApi(url ? url : defaultChainUrls[name], options) }),
     {}
   )
 }
